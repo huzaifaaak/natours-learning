@@ -115,11 +115,11 @@ body {
 
 .row {
   display: flex;
-  background-color: white !important; }
+  background-color: white !important;
+  gap: 1rem; }
 
 .halfRow {
   display: flex;
-  flex-grow: 1;
   min-height: 3rem;
   width: 50%; }
 
@@ -254,3 +254,22 @@ body {
     /* Since there is an element displayed as an inline-block inside this parent div, it can be treated as text  */
     /* hence the rule below can be applied */
     text-align: center; }
+
+.composition {
+  display: flex;
+  flex: 1;
+  position: relative; }
+  .composition__photo {
+    width: 55%;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+    border-radius: 2px;
+    position: absolute; }
+    .composition__photo--p1 {
+      left: 0;
+      top: -2rem; }
+    .composition__photo--p2 {
+      right: 0;
+      top: 2rem; }
+    .composition__photo--p3 {
+      left: 20%;
+      top: 10rem; }

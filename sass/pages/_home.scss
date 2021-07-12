@@ -7,11 +7,11 @@
 .row {
   display: flex;
   background-color: white !important;
+  gap: 1rem;
 }
 
 .halfRow {
   display: flex;
-  flex-grow: 1;
   min-height: 3rem;
   width: 50%;
 }
