@@ -1,0 +1,13 @@
+@mixin textTransform {
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+@mixin clearfix {
+  &:after {
+    content:"";
+    clear:both;
+    display:table;
+  }
+}
+
