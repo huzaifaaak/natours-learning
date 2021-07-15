@@ -109,13 +109,13 @@ body {
   margin-bottom: 1.5rem; }
 
 .section-about {
-  background-color: var(#f7f7f7);
+  background-color: #f7f7f7;
   padding: 25rem 0;
   margin-top: -20vh; }
 
 .row {
   display: flex;
-  background-color: white !important;
+  background-color: #f7f7f7 !important;
   gap: 1rem; }
 
 .halfRow {
@@ -127,6 +127,39 @@ body {
   display: flex;
   width: 2rem;
   height: 100%; }
+
+.section-feature {
+  padding: 20rem 0;
+  background-image: linear-gradient(to right bottom, rgba(85, 197, 122, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg");
+  background-size: cover;
+  transform: skewY(-7deg);
+  margin-top: -10rem; }
+  .section-feature > * {
+    transform: skewY(7deg); }
+
+.section-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6rem; }
+
+.feature-box {
+  background-color: rgba(238, 238, 238, 0.8);
+  font-size: 1.5rem;
+  padding: 2.5rem;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  display: inline-block;
+  transition: all 0.3s; }
+  .feature-box__icon {
+    font-size: 6rem;
+    margin-bottom: 0.5rem;
+    background-image: linear-gradient(to right, #55c57a, #28b485);
+    -webkit-background-clip: text;
+    color: transparent; }
+  .feature-box:hover {
+    transform: translateY(-1.5rem) scale(1.03); }
 
 .row {
   max-width: 114rem;
@@ -146,19 +179,19 @@ body {
     font-size: 2rem;
     height: calc(8rem * .75); }
     .row [class^="col-"]:not(:last-child) {
-      margin-right: 2rem; }
+      margin-right: 6rem; }
   .row .col-1-of-2 {
-    width: calc((100% - 2rem)/2); }
+    width: calc((100% - 6rem)/2); }
   .row .col-1-of-3 {
-    width: calc((100% - 2 * 2rem)/3); }
+    width: calc((100% - 2 * 6rem)/3); }
   .row .col-2-of-3 {
-    width: calc((2 * ((100% - 2 * 2rem)/3)) + 2rem); }
+    width: calc((2 * ((100% - 2 * 6rem)/3)) + 6rem); }
   .row .col-1-of-4 {
-    width: calc((100% - 3 * 2rem)/4); }
+    width: calc((100% - 3 * 6rem)/4); }
   .row .col-2-of-4 {
-    width: calc( 2* ((100% - 3 * 2rem)/4) + 2rem); }
+    width: calc( 2* ((100% - 3 * 6rem)/4) + 6rem); }
   .row .col-3-of-4 {
-    width: calc( 3 * ((100% - 3 * 2rem)/4) + 2 * 2rem); }
+    width: calc( 3 * ((100% - 3 * 6rem)/4) + 2 * 6rem); }
 
 /* Pseudo classes. Using the state of the selector */
 /* E.g. visited, link, active, hover */
@@ -258,7 +291,8 @@ body {
 .composition {
   display: flex;
   flex: 1;
-  position: relative; }
+  position: relative;
+  margin-left: 6rem; }
   .composition__photo {
     width: 55%;
     box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
@@ -283,3 +317,13 @@ body {
       outline: 10px solid #55c57a; }
   .composition:hover .composition__photo:not(:hover) {
     transform: scale(0.95); }
+
+.feature-box {
+  background-color: rgba(238, 238, 238, 0.8);
+  font-size: 1.5rem;
+  padding: 2.5rem;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  flex-direction: column;
+  width: 25rem; }
