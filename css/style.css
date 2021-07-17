@@ -269,14 +269,20 @@ body {
   transform: translateY(0px); }
 
 .card {
-  background-color: orangered;
-  height: 50rem;
-  transition: all 0.8s;
+  perspective: 150rem;
+  -moz-perspective: 150rem;
   width: 100%; }
   .card__container {
     display: flex;
     flex-grow: 1; }
-  .card:hover {
+  .card__side {
+    background-color: orangered;
+    height: 50rem;
+    color: #fff;
+    size: 2rem;
+    transition: all 0.8s;
+    width: 100%; }
+  .card:hover .card__side {
     transform: rotateY(180deg); }
 
 .header {
