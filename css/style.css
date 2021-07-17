@@ -271,7 +271,8 @@ body {
 .card {
   perspective: 150rem;
   -moz-perspective: 150rem;
-  width: 100%; }
+  width: 100%;
+  position: relative; }
   .card__container {
     display: flex;
     flex-grow: 1; }
@@ -280,10 +281,14 @@ body {
     height: 50rem;
     color: #fff;
     size: 2rem;
-    transition: all 0.8s;
-    width: 100%; }
+    transition: all 0.8s ease;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden; }
     .card__side--front {
-      background-color: green;
+      background-color: #eee;
       width: 100%;
       height: 50rem; }
     .card__side--back {
