@@ -161,6 +161,11 @@ body {
   .feature-box:hover {
     transform: translateY(-1.5rem) scale(1.03); }
 
+.section-tours {
+  background-color: #f7f7f7;
+  padding: 25rem 0 50rem 0;
+  margin-top: -10rem; }
+
 .row {
   max-width: 114rem;
   background-color: rgba(119, 119, 119, 0.167);
