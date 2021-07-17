@@ -268,9 +268,16 @@ body {
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
   transform: translateY(0px); }
 
-.card__container {
-  display: flex;
-  flex-grow: 1; }
+.card {
+  background-color: orangered;
+  height: 50rem;
+  transition: all 0.8s;
+  width: 100%; }
+  .card__container {
+    display: flex;
+    flex-grow: 1; }
+  .card:hover {
+    transform: rotateY(180deg); }
 
 .header {
   height: 95vh;
