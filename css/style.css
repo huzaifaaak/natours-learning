@@ -280,7 +280,7 @@ body {
     background-color: orangered;
     height: 50rem;
     color: #fff;
-    size: 2rem;
+    font-size: 2rem;
     transition: all 0.8s ease;
     width: 100%;
     position: absolute;
