@@ -15,13 +15,29 @@
     color: #fff;
     font-size: 2rem;
     transition: all 0.8s ease;
-    width: 100%;
+    width: 20rem;
     position: absolute;
     top: 0;
     left: 0;
+    display: block;
     backface-visibility: hidden;
     border-radius: 3px;
     box-shadow: 0 1.5rem 4 rem rgba($color-black, 0.15);
+
+    &--picture {
+      width: 100%;
+      height: 23rem;
+      background-blend-mode: darken;
+      &--1 {
+        background-image: linear-gradient(
+            to bottom right,
+            rgba($color-secondary-light, 0.4),
+            rgba($color-secondary-dark, 0.4)
+          ),
+          url("../img/nat-5.jpg");
+        background-size: cover;
+      }
+    }
 
     &--front {
       background-color: $color-white;
@@ -34,14 +50,6 @@
       transform: rotateY(180deg);
       width: 100%;
       height: 50rem;
-
-      &-1 {
-        background-image: linear-gradient(
-          to right bottom,
-          $color-secondary-light,
-          $color-secondary-dark
-        );
-      }
     }
   }
 
@@ -52,6 +60,15 @@
   &:hover &__side--back {
     transform: rotateY(0deg);
   }
+
+  // &__picture {
+  //   &--1 {
+  //     width: 100%;
+  //     height: 23rem;
+  //     background-image: url("../img/nat-5.jpg");
+  //     background-size: cover;
+  //   }
+  // }
 }
 
 //.card:hover then .card__side is transformed {
