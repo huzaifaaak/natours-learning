@@ -4,6 +4,10 @@
     flex-grow: 1;
   }
 
+  &__container--spacing {
+    gap: 3rem;
+  }
+
   perspective: 150rem;
   -moz-perspective: 150rem;
   width: 100%;
@@ -34,6 +38,24 @@
             rgba($color-secondary-dark, 0.4)
           ),
           url("../img/nat-5.jpg");
+        background-size: cover;
+      }
+      &--2 {
+        background-image: linear-gradient(
+            to bottom right,
+            rgba($color-primary-light, 0.4),
+            rgba($color-primary-dark, 0.4)
+          ),
+          url("../img/nat-6.jpg");
+        background-size: cover;
+      }
+      &--3 {
+        background-image: linear-gradient(
+            to bottom right,
+            rgba($color-tertiary-light, 0.4),
+            rgba($color-tertiary-dark, 0.4)
+          ),
+          url("../img/nat-7.jpg");
         background-size: cover;
       }
     }

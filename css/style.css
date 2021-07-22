@@ -276,6 +276,8 @@ body {
   .card__container {
     display: flex;
     flex-grow: 1; }
+  .card__container--spacing {
+    gap: 3rem; }
   .card__side {
     height: 50rem;
     font-size: 2rem;
@@ -295,6 +297,12 @@ body {
       clip-path: polygon(0 0, 100% 0, 100% 81%, 0% 100%); }
       .card__side--picture--1 {
         background-image: linear-gradient(to bottom right, rgba(255, 185, 0, 0.4), rgba(255, 119, 48, 0.4)), url("../img/nat-5.jpg");
+        background-size: cover; }
+      .card__side--picture--2 {
+        background-image: linear-gradient(to bottom right, rgba(85, 197, 122, 0.4), rgba(40, 180, 133, 0.4)), url("../img/nat-6.jpg");
+        background-size: cover; }
+      .card__side--picture--3 {
+        background-image: linear-gradient(to bottom right, rgba(41, 152, 255, 0.4), rgba(86, 67, 250, 0.4)), url("../img/nat-7.jpg");
         background-size: cover; }
     .card__side--front {
       background-color: #fff;
