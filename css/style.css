@@ -277,7 +277,6 @@ body {
     display: flex;
     flex-grow: 1; }
   .card__side {
-    background-color: orangered;
     height: 50rem;
     font-size: 2rem;
     transition: all 0.8s ease;
@@ -302,7 +301,6 @@ body {
       width: 100%;
       height: 50rem; }
     .card__side--back {
-      background-color: orangered;
       transform: rotateY(180deg);
       width: 100%;
       height: 50rem; }
@@ -320,6 +318,11 @@ body {
     transform: rotateY(-180deg); }
   .card:hover .card__side--back {
     transform: rotateY(0deg); }
+  .card__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
 
 .header {
   height: 95vh;

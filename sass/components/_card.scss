@@ -10,7 +10,6 @@
   position: relative;
 
   &__side {
-    background-color: orangered;
     height: 50rem;
     font-size: 2rem;
     transition: all 0.8s ease;
@@ -46,7 +45,6 @@
     }
 
     &--back {
-      background-color: orangered;
       transform: rotateY(180deg);
       width: 100%;
       height: 50rem;
@@ -74,6 +72,22 @@
 
   &:hover &__side--back {
     transform: rotateY(0deg);
+  }
+
+  &__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__price-box {
+  }
+
+  &__price-only {
+  }
+
+  &__price-value {
   }
 
   // &__picture {
