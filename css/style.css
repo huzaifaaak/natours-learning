@@ -329,6 +329,8 @@ body {
     text-align: center;
     margin-bottom: 8rem;
     color: #fff; }
+  .card__price-value {
+    font-size: 4rem; }
 
 .header {
   height: 95vh;
