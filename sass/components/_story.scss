@@ -1,0 +1,66 @@
+.story {
+  width: 75%;
+  margin: 0 auto; //Block in block so we can use this
+  box-shadow: 0 3rem 6rem rgba($color-black, 0.1);
+  background-color: rgba($color-white, 0.6);
+  border-radius: 3px;
+  padding: 6rem;
+  font-size: $default-font-size;
+  padding-left: 9rem;
+  transform: skew(-12deg);
+  margin-top: 9rem;
+
+  & > * {
+    // Direct child selector to select everything
+    transform: skew(12deg);
+  }
+
+  &__shape {
+    width: 15rem;
+    height: 15rem;
+    float: left;
+    //https://developer.mozilla.org/en-US/docs/Web/CSS/shape-outside
+    // NExt two properites help in floating the text around the circle
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(
+      50% at 50% 50%
+    ); // in-order for  this to work the element must be flaot
+    //  In safari this only work with webkit prefix
+
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    transform: translateX(-3rem); // Best way to marginalize item that is
+    // floating is to use transform property rather than playing with the margins
+    position: relative;
+  }
+
+  &__img {
+    height: 100%; // Its inside shape so 100% would be 15 rem
+    transform: translateX(-4rem) scale(1.4);
+    transition: all 0.3s;
+    // Here we dont specify width because height is bigger than width and it would take entire
+  }
+
+  &__caption {
+    position: absolute; // we need to set the parent to relative
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    color: $color-white;
+    text-transform: uppercase;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.5s;
+    backface-visibility: hidden;
+  }
+
+  &:hover &__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover &__img {
+    transform: translateX(-4rem) scale(1);
+    filter: blur(3px) brightness(80%); //Built in css property that we can apply
+  }
+}

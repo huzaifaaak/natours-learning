@@ -6,7 +6,7 @@
 
 .row {
   display: flex;
-  background-color: $color-grey-light-1 !important;
+  background-color: transparent !important;
   gap: 1rem;
 }
 
@@ -89,4 +89,8 @@
 .discover-all {
   padding-top: 8rem;
   background-color: $color-grey-light-1;
+}
+
+.section-stories {
+  position: relative;
 }
