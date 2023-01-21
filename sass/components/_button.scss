@@ -2,8 +2,12 @@
 /* E.g. visited, link, active, hover */
 
 .btn {
+  &, // This will apply to all of button as well. Video 47 19:20
   &:link,
   &:visited {
+    // These will only get applied to the button with
+    // link and visited psedo classes
+    // The button class does not have the link or visited class
     @include textTransform;
     padding: 1.5rem 4rem;
     display: inline-block;
@@ -12,6 +16,10 @@
     transition: all 0.2s;
     position: relative;
     font-size: $default-font-size;
+
+    //change form the <button> element
+    border: none;
+    cursor: pointer;
   }
 
   &:hover {

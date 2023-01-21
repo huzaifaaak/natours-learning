@@ -94,3 +94,38 @@
 .section-stories {
   position: relative;
 }
+
+.section-book {
+  padding: 15rem 0;
+  background-image: linear-gradient(
+    to right bottom,
+    $color-primary-light,
+    $color-primary-dark
+  );
+}
+
+.book {
+  // We can achieve the clip path with the gradient. The gradient has to be first in image.
+  // We can specify angle over x axis
+  // We can specify percentage. We can specify at different points which color there should be
+  // At 0 percent we want black color
+  background-image: linear-gradient(
+      105deg,
+      //degree controls the center curve
+      rgba($color-white, 0.9) 0%,
+      rgba($color-white, 0.9) 50%,
+      //At 50 percent we also want to to be white
+      transparent 50%
+    ),
+    url("../../img/nat-10.jpg");
+  background-size: 100%; //100 means as the same as cover
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, 0.2);
+
+  height: 50rem;
+
+  &__form {
+    width: 50%;
+    padding: 6rem;
+  }
+}
