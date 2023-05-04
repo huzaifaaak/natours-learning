@@ -29,8 +29,10 @@
           <span class="heading-primary--main">Outdoors</span>
           <span class="heading-primary--sub">Where Life Happens</span>
         </h1>
-
-        <a href="#" class="btn btn--white btn--animated">Discover our tours</a>
+        <!-- Hash comes before id -->
+        <a href="#section-tours" class="btn btn--white btn--animated"
+          >Discover our tours</a
+        >
       </div>
       <!-- End of text inside the header -->
     </header>
@@ -124,8 +126,8 @@
         </div>
       </div>
     </section>
-
-    <section class="section-tours">
+    <!-- Id can be same as class -->
+    <section class="section-tours" id="section-tours">
       <div class="u-center-text u-margin-bottom-big">
         <h2 class="heading-secondary">Exiting tours for people</h2>
       </div>
@@ -149,7 +151,7 @@
                   <p class="card__price-only">Only</p>
                   <p class="card__price-value">$297</p>
                 </div>
-                <a href="" class="btn btn--white">Book now</a>
+                <a href="#popup" class="btn btn--white">Book now</a>
               </div>
             </div>
           </div>
@@ -172,7 +174,7 @@
                   <p class="card__price-only">Only</p>
                   <p class="card__price-value">$390</p>
                 </div>
-                <a href="" class="btn btn--white">Book now</a>
+                <a href="#popup" class="btn btn--white">Book now</a>
               </div>
             </div>
           </div>
@@ -195,7 +197,7 @@
                   <p class="card__price-only">Only</p>
                   <p class="card__price-value">$507</p>
                 </div>
-                <a href="" class="btn btn--white">Book now</a>
+                <a href="#popup" class="btn btn--white">Book now</a>
               </div>
             </div>
           </div>
@@ -348,41 +350,81 @@
     <div class="footer__logo-box">
       <img src="img/logo-green-2x.png" alt="Full logo" class="footer__logo" />
     </div>
-    <!-- .div-col-1-of-2*2 will create 2 divs. *2 will create 2 -->
-    <div class="row col-1-of-2">
-      <!-- usually  tion is couple of unordered list -->
-      <div class="footer__navigation">
-        <!-- .ul.footer__list>li.footer__item>a.footer__link will create item in item -->
-        <div class="ul footer__list">
-          <ul class="footer__list">
-            <li class="footer__item">
-              <a href="#" class="footer__link"> Company </a>
-            </li>
-            <li class="footer__item">
-              <a href="#" class="footer__link"> Contact us </a>
-            </li>
-            <li class="footer__item">
-              <a href="#" class="footer__link"> Carrers </a>
-            </li>
-            <li class="footer__item">
-              <a href="#" class="footer__link"> Privacy policy </a>
-            </li>
-            <li class="footer__item">
-              <a href="#" class="footer__link"> Terms </a>
-            </li>
-          </ul>
+
+    <div
+      class="div"
+      style="
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex: 1;
+      "
+    >
+      <!-- .div-col-1-of-2*2 will create 2 divs. *2 will create 2 -->
+      <div style="display: flex; flex-grow: 1">
+        <!-- usually  tion is couple of unordered list -->
+        <div class="footer__navigation">
+          <!-- .ul.footer__list>li.footer__item>a.footer__link will create item in item -->
+          <div class="ul footer__list">
+            <ul class="footer__list">
+              <li class="footer__item">
+                <a href="#" class="footer__link"> Company </a>
+              </li>
+              <li class="footer__item">
+                <a href="#" class="footer__link"> Contact us </a>
+              </li>
+              <li class="footer__item">
+                <a href="#" class="footer__link"> Carrers </a>
+              </li>
+              <li class="footer__item">
+                <a href="#" class="footer__link"> Privacy policy </a>
+              </li>
+              <li class="footer__item">
+                <a href="#" class="footer__link"> Terms </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="row col-1-of-2">
-      <p class="footer__copyright">
-        Built my <a href="" class="footer__link"> Jonas Schmedtmann </a> for his
-        online course <a href="" class="footer__link">Advanced CSS and Sass</a>.
-        Copyright &copy; by Huzaifa Khan. You are 100% allowed to use this
-        webpage for both personal and commerical use, but NOT to claim it as
-        your own design. A credit to the author, Huzaifa Khan is higly
-        appreciated!
-      </p>
+      <div style="width: 50%">
+        <p class="footer__copyright">
+          Built my <a href="" class="footer__link"> Jonas Schmedtmann </a> for
+          his online course
+          <a href="" class="footer__link">Advanced CSS and Sass</a>. Copyright
+          &copy; by Huzaifa Khan. You are 100% allowed to use this webpage for
+          both personal and commerical use, but NOT to claim it as your own
+          design. A credit to the author, Huzaifa Khan is higly appreciated!
+        </p>
+      </div>
     </div>
   </footer>
+
+  <div class="popup" id="popup">
+    <div class="popup__context">
+      <div class="popup__left">
+        <img src="img/nat-8.jpg" alt="" class="popup__img" />
+        <img src="img/nat-8.jpg" alt="" class="popup__img" />
+      </div>
+      <div class="popup__right">
+        <!-- We add section-tours here because it will become the target. popup is no longer the taget so we go back to initial state -->
+        <a href="#section-tours" class="popup__close">&times;</a>
+        <h2 class="heading-secondary u-margin-bottom-small">
+          Start booking now
+        </h2>
+        <h3 class="heading-tertiary u-margin-bottom-small">
+          Important &ndash; Please read these terms before booking
+        </h3>
+        <p class="popup__text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam
+          volutpat commodo sed egestas egestas fringilla phasellus faucibus
+          scelerisque. Lacus vel facilisis volutpat est velit egestas dui id. Ac
+          tortor dignissim convallis aenean. Tortor vitae purus faucibus ornare
+          suspendisse sed nisi. Vulputate odio ut enim blandit volutpat maecenas
+          volutpat blandit aliquam.
+        </p>
+        <a href="" class="btn btn--green">Book now</a>
+      </div>
+    </div>
+  </div>
 </html>

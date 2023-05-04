@@ -1,0 +1,112 @@
+.popup {
+  width: 100%;
+  height: 100vh;
+  position: fixed; // it doesnt move
+  left: 0;
+  top: 0;
+  overflow: auto;
+  z-index: 10; // to make it top of entier page
+  background-color: rgba(#000000, 0.7);
+  // display: none; Display: none cannot be animated so we use opacity
+  opacity: 0;
+  visibility: hidden; // If we only have the opacity 0 it will be there so we add visibility hidden
+  transition: all 0.3s;
+
+  // The id=#popup will become the targe
+  // Open states
+  &:target {
+    opacity: 1;
+    visibility: visible;
+  }
+  &:target &__context {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  // Open state end
+
+  &__close {
+    &:link,
+    &:visited {
+      color: $color-grey-dark;
+      position: absolute;
+      top: 2.5rem;
+      right: 2.5rem;
+      font-size: 3rem;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.2s;
+      line-height: 1;
+    }
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  &__context {
+    @include absCenter; //mixing for center place
+    width: 75%;
+    background-color: $color-white;
+    box-shadow: 0 2rem 4rem rgba(#000, 0.2);
+    border-radius: 3px;
+
+    // THis will hide the overflowing image and show the border again
+    // If image is going over border use overflow hidden
+    overflow: hidden;
+
+    // This mill make it as a table
+    display: table;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.25); // we can only have one transform property one is @include absCenter so that
+    // gets overriden. We are using that again here
+    transition: all 0.5s 0.2s; // THe .2 allow the black background to come in and the popup
+  }
+  &__left {
+    width: 33.3333%;
+
+    //This will make it a table cell. Table cell share the same height
+    display: table-cell;
+  }
+  &__right {
+    width: 66.66667;
+    // this will make it  a table cell
+    display: table-cell;
+    // this is used with table cell and it will center this component
+    vertical-align: middle;
+    padding: 3rem 5rem;
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+  }
+
+  &__text {
+    font-size: 1.4rem;
+    margin-bottom: 4rem;
+
+    // This will automatically create 2 columns
+    column-count: 2;
+
+    //This will give gap betwenn column
+    // Default for this is 1em. 1em = 14px
+    // 1em is always the font size of current element
+    column-gap: 4rem;
+    column-rule: 1px solid $color-grey-dark-2; // Browser will put between column
+
+    hyphens: auto; // IT can also be manual. Where we can in our text tell where to place hyphens
+    // To make it work we have to add "lang=en" property in our <html> tag. There can be different code for
+    // language
+
+    // In older browsers it will not work without this
+    -moz-hyphens: auto; // mozila
+    -ms-hyphens: auto; // microsoft edge
+    -webkit-hyphens: auto; // chrome and safari
+
+    -moz-column-gap: 4rem;
+    -moz-column-rule: 1px solid $color-grey-dark-2; // Browser will put between column
+    -moz-column-count: 2;
+
+    // ITs better to not add prefixes by hand there is a tool. Autoprefixer tool will be talked about
+    // later in the course
+  }
+}

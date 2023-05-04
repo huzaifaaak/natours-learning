@@ -1,7 +1,6 @@
-// Place all styles for 
+// Place all styles for
 //  - Resets
 //  - HTML and body styling here
-
 
 *,
 *::after,
@@ -14,6 +13,25 @@
 /* Root font size */
 html {
   // Defines the size of 1rem
-  font-size: 62.5%;
-}
+  font-size: 62.5%; //1rem = 10px; 10px/16px = 62.5
 
+  // // since the second media query will apply in this case.
+  // // this media query becomes un-necessary
+  // @include respond(phone) {
+  //   font-size: 50%; //
+  // }
+
+  @include respond(tab-land) {
+    // width < 900?
+    font-size: 50%; // 1rem = 9px, 9/16 = 56.25%
+  }
+  // both of the media queries are true in case when we have width < 600 but we apply second one
+  @include respond(tab-port) {
+    // width < 600?
+    font-size: 60%; // 1rem = 8px, 8/16 = 50%
+  }
+
+  @include respond(big-desktop) {
+    font-size: 80%; // 1rem = 12, 12/16 = 75%
+  }
+}
