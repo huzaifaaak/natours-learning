@@ -5,10 +5,18 @@
 
 @mixin clearfix {
   &:after {
-    content: "";
-    clear: both;
-    display: table;
+    content:"";
+    clear:both;
+    display:table;
   }
+}
+
+@mixin boxShadow {
+  box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+}
+
+@mixin popupShadow {
+  box-shadow: 0 2rem 4rem rgba($color-black, .2);
 }
 
 @mixin absCenter {
@@ -18,57 +26,61 @@
   transform: translate(-50%, -50%);
 }
 
-// MEDIA QUERY MANAGER
-// 0 - 600px:  Phone
-// 600 - 900px: Tablet portrait
-// 900 - 1200px: Tablet landscape
-// [1200-1800] is where normal styles apply. This is our current normal media queries apply
-// 1800px + : Big desktop
 
-// Max width media query for the first 3 and min width media query for last one
+// MEDIA QUERY Mixins
+/*
+0-600px: phone
+600-900px: tablet portrait
+900-1200px: tablet landscape
+1200-1800px: Normal styles
 
-@mixin respond-phone {
-  @media (max-width: 600px) {
-    // content allow us to pass a block of code in mixin. Check _base.scss
-    @content;
-  }
-}
+1800px +: Big desktop
+*/
 
 /*
-$breakpoint argument choices
-- phone
+$breakpoint argument choices:
+- phone:
 - tab-port
-- tab-land
-- big-desktop
+- tabl-land
+- big desktop
+
+
+ORDER: Base + typography > general layout > Components
 */
-@mixin respond($breakpoint) {
-  // About rem and ems. The rem and ems they are not effected by a root font size seting.
-  // 1 rem or em is equal to default i.e 16px but if user changes it to 20px then it will be 20px no matter what we have defined in our _base file font defination
-  // Here we will use em instead of rem because they fail to work in some browser.
-  // So we divide 600px by 16 which will be 37.5em
+
+
+@mixin respond($breakpoint){
   @if $breakpoint == phone {
-    @media (max-width: 37.5em) {
-      //600px
-      @content;
-    }
+    @media (max-width: 37.5em){ @content } //600px
   }
+
   @if $breakpoint == tab-port {
-    @media (max-width: 56.25em) {
-      // 900px
-      @content;
-    }
+    @media (max-width: 56.25em){ @content } //900px
   }
+
   @if $breakpoint == tab-land {
-    @media (max-width: 75em) {
-      // 1200px
-      @content;
-    }
+    @media (max-width: 75em){ @content } //1200px
   }
+
   @if $breakpoint == big-desktop {
-    @media (min-width: 112.5em) {
-      // 1800px
-      // this will be a min width so if width is minimum than this it will not happen
-      @content;
-    }
+    @media (min-width: 112.5em){ @content } //1800px
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

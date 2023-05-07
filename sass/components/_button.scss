@@ -2,38 +2,38 @@
 /* E.g. visited, link, active, hover */
 
 .btn {
-  &, // This will apply to all of button as well. Video 47 19:20
+  &,
   &:link,
   &:visited {
-    // These will only get applied to the button with
-    // link and visited psedo classes
-    // The button class does not have the link or visited class
     @include textTransform;
     padding: 1.5rem 4rem;
     display: inline-block;
     border-radius: 10rem;
     /* Rule for all transtions to be on the main link */
-    transition: all 0.2s;
+    transition: all .2s;
     position: relative;
     font-size: $default-font-size;
 
-    //change form the <button> element
+    // Change for the button element
     border: none;
     cursor: pointer;
   }
-
-  &:hover {
-    transform: translateY(-0.3rem);
+  
+  
+  &:hover { 
+    transform: translateY(-.3rem);
     /* ADD Shadow when hovered */
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1rem 2rem rgba(0,0,0,.2);
   }
-
-  &:active {
-    transform: translateY(-0.1rem);
+  
+  &:active,
+  &:focus {
+    transform: translateY(-.1rem);
     /* ADD Shadow when clicked */
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
+    outline: none;
   }
-
+  
   &--white {
     background-color: $color-white;
     color: $color-grey-dark;
@@ -43,40 +43,44 @@
   }
 
   &--green {
+    text-align: center;
     background-color: $color-primary;
     color: $color-white;
     &::after {
       background-color: $color-primary;
     }
   }
+  
   /* Section 2 Lecture 10 Lesson - Pseudo elements */
   /* In this lesson, a larger version of the button will appear behind the original */
   /* button using hover. &::after will be used */
-
+  
   &::after {
     content: "";
     display: inline-block;
     height: 100%;
     width: 100%;
     border-radius: 10rem;
-    position: absolute;
+    position: absolute; 
     top: 0;
     left: 0;
     z-index: -1;
-    transition: all 0.4s;
+    transition: all .4s;
   }
+  
 
+  
   /* Add the transform rule to scale when &:hover::after is applied */
-
+  
   &:hover::after {
     transform: scaleX(1.4) scaleY(1.6);
     opacity: 0;
   }
-
+  
   /* Apply button animation to a new class to make effect exclusive to animated buttons only */
   /* Note animation formula: animation name, animation duration, animation timing function and animation-delay; */
   &--animated {
-    animation: moveInBottom 0.5s ease-out 0.75s;
+    animation: moveInBottom 0.5s ease-out .75s;
     /* Apply 0% animation effect to the button using animation fill mode */
     animation-fill-mode: backwards;
   }
@@ -85,24 +89,24 @@
 .btn-text {
   &:link,
   &:visited {
-    font-size: $default-font-size;
     color: $color-primary;
     display: inline-block;
     text-decoration: none;
     border-bottom: 1px solid $color-primary;
-    padding: 3px;
-    transition: all 0.2s;
+    padding: 5px;
+    font-size: $default-font-size;
+    transition: all .2s;
   }
 
-  &:hover {
+  &:hover{
     background-color: $color-primary;
     color: $color-white;
-    box-shadow: 0 1rem 2rem rgba($color-black, 0.15);
+    box-shadow: 0 1rem 1rem rgba($color-black, .15);
     transform: translateY(-2px);
   }
 
   &:active {
-    box-shadow: 0 1rem 2rem rgba($color-black, 0.15);
-    transform: translateY(0px);
+    box-shadow: 0 .5rem 1rem rgba($color-black, .15);
+    transform: translateY(0);   
   }
 }

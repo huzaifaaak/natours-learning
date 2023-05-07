@@ -4,6 +4,8 @@ $breakpoint argument choices
 - tab-port
 - tab-land
 - big-desktop
+
+Order: Base + typography > general layout + grid > page layout > components
 */
 @keyframes moveInLeft {
   0% {
@@ -57,12 +59,18 @@ html {
       font-size: 80%; } }
 
 body {
+  box-sizing: border-box;
+  padding: 3rem; }
+  @media (max-width: 56.25em) {
+    body {
+      padding: 0; } }
+
+body {
   color: #777;
   font-family: "Lato", Arial, sans-serif;
   font-weight: 400;
   /* font-size: 16px; */
   line-height: 1.7;
-  padding: 3rem;
   /* Force inherit box-sizing to all elements */
   box-sizing: border-box; }
 
@@ -80,6 +88,10 @@ body {
     animation-name: moveInLeft;
     animation-duration: 1s;
     animation-timing-function: ease-out; }
+    @media (max-width: 37.5em) {
+      .heading-primary--main {
+        letter-spacing: 1rem;
+        font-family: 5rem; } }
   .heading-primary--sub {
     display: block;
     font-size: 2rem;
@@ -87,6 +99,9 @@ body {
     letter-spacing: 1.75rem;
     /* Shorthand used here */
     animation: moveInRight 1s ease-out; }
+    @media (max-width: 37.5em) {
+      .heading-primary--sub {
+        letter-spacing: 0.5rem; } }
 
 .heading-secondary {
   font-size: 3.5rem;
@@ -101,6 +116,12 @@ body {
   .heading-secondary:hover {
     transform: skewY(2deg) skewY(15deg) scale(1.1);
     box-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
+  @media (max-width: 56.25em) {
+    .heading-secondary {
+      font-size: 2.5rem; } }
+  @media (max-width: 37.5em) {
+    .heading-secondary {
+      font-size: 5rem; } }
 
 .heading-tertiary {
   font-size: 1.6rem;
@@ -133,17 +154,14 @@ body {
   margin-top: -20vh; }
 
 .row {
-  display: flex;
   background-color: transparent !important;
   gap: 1rem; }
 
 .halfRow {
-  display: flex;
   min-height: 3rem;
   width: 50%; }
 
 .space {
-  display: flex;
   width: 2rem;
   height: 100%; }
 
@@ -157,7 +175,6 @@ body {
     transform: skewY(7deg); }
 
 .section-container {
-  display: flex;
   align-items: center;
   justify-content: center;
   gap: 6rem; }
@@ -209,21 +226,30 @@ body {
 .row {
   max-width: 114rem;
   margin: 0 auto; }
+  @media (max-width: 56.25em) {
+    .row {
+      max-width: 50rem;
+      padding: 0 3rem; } }
   .row:not(:last-child) {
     margin-bottom: 8rem; }
+    @media (max-width: 56.25em) {
+      .row:not(:last-child) {
+        margin-bottom: 8rem; } }
   .row:after {
     content: "";
     clear: both;
     display: table; }
   .row [class^="col-"] {
-    background-color: orangered;
-    float: left;
-    color: #fff;
-    text-align: center;
-    font-size: 2rem;
-    height: calc(8rem * 0.75); }
+    float: left; }
     .row [class^="col-"]:not(:last-child) {
       margin-right: 6rem; }
+      @media (max-width: 56.25em) {
+        .row [class^="col-"]:not(:last-child) {
+          margin-right: 0;
+          margin-bottom: 8rem; } }
+    @media (max-width: 56.25em) {
+      .row [class^="col-"] {
+        width: 100% !important; } }
   .row .col-1-of-2 {
     width: calc((100% - 6rem) / 2); }
   .row .col-1-of-3 {
@@ -319,17 +345,12 @@ body {
   -moz-perspective: 150rem;
   width: 100%;
   position: relative; }
-  .card__container {
-    display: flex;
-    flex-grow: 1; }
   .card__container--spacing {
     gap: 3rem; }
   .card__side {
-    height: 50rem;
     font-size: 2rem;
     transition: all 0.8s ease;
     width: 20rem;
-    position: absolute;
     top: 0;
     left: 0;
     display: block;
@@ -451,8 +472,6 @@ body {
     padding-top: 2rem; }
 
 .composition {
-  display: flex;
-  flex: 1;
   position: relative;
   margin-left: 6rem; }
   .composition__photo {
@@ -487,7 +506,6 @@ body {
   text-align: center;
   border-radius: 3px;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
-  flex-direction: column;
   width: 25rem; }
 
 .story {

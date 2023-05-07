@@ -4,125 +4,53 @@
   margin-top: -20vh;
 }
 
-.row {
-  display: flex;
-  background-color: transparent !important;
-  gap: 1rem;
-}
-
-.halfRow {
-  display: flex;
-  min-height: 3rem;
-  width: 50%;
-}
-
-.space {
-  display: flex;
-  width: 2rem;
-  height: 100%;
-}
-
-.section-feature {
+.section-features{
   padding: 20rem 0;
-  background-image: linear-gradient(
-      to right bottom,
-      rgba($color-primary-light, 0.8),
-      rgba($color-primary-dark, 0.8)
-    ),
-    url("../img/hero.jpg");
-  background-size: cover;
-
-  transform: skewY(-7deg);
-  margin-top: -10rem;
-
-  & > * {
-    transform: skewY(7deg);
-  }
-}
-
-.section-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  // &:not(:last-child) {
-  //   margin-right: 1rem;
-  // }
-  gap: $gutter-horizontal;
-}
-
-.feature-box {
-  background-color: rgba($color-white, 0.8);
-  font-size: 1.5rem;
-  padding: 2.5rem;
-  text-align: center;
-  border-radius: 3px;
-  box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
-  display: inline-block;
-  transition: all 0.3s;
-  // &:not(:last-child) {
-  //   margin-right: 1rem;
-  // }
-
-  &__icon {
-    font-size: 6rem;
-    margin-bottom: 0.5rem;
-    background-image: linear-gradient(
-      to right,
-      $color-primary-light,
-      $color-primary-dark
-    );
-    -webkit-background-clip: text;
-    color: transparent;
-  }
-
-  &:hover {
-    transform: translateY(-1.5rem) scale(1.03);
-  }
+  height: 95vh;
+  margin-top:-10rem;
+  background-image:linear-gradient(
+    to right bottom, 
+    rgba($color-primary-light, 0.8),
+    rgba($color-primary-dark,0.8)),  
+    url('../img/nat-4.jpg');
+    background-size: cover;
+    transform: skewY(-7deg);
+    
+    & > * {
+      transform: skewY(7deg);
+    }
 }
 
 .section-tours {
   background-color: $color-grey-light-1;
-  padding: 25rem 0 50rem 0;
-  margin-top: -10rem;
-}
+  padding: 25rem 0 15rem 0;
+  margin-top: -11rem;
 
-.discover-all {
-  padding-top: 8rem;
-  background-color: $color-grey-light-1;
+  transition: all 5s ease-in;
 }
 
 .section-stories {
-  position: relative;
+  padding: 15rem 0;
+  position:relative;
 }
 
 .section-book {
   padding: 15rem 0;
-  background-image: linear-gradient(
-    to right bottom,
-    $color-primary-light,
-    $color-primary-dark
-  );
+  background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark)
 }
 
 .book {
-  // We can achieve the clip path with the gradient. The gradient has to be first in image.
-  // We can specify angle over x axis
-  // We can specify percentage. We can specify at different points which color there should be
-  // At 0 percent we want black color
-  background-image: linear-gradient(
-      105deg,
-      //degree controls the center curve
-      rgba($color-white, 0.9) 0%,
-      rgba($color-white, 0.9) 50%,
-      //At 50 percent we also want to to be white
-      transparent 50%
-    ),
-    url("../../img/nat-10.jpg");
-  background-size: 100%; //100 means as the same as cover
-  border-radius: 3px;
-  box-shadow: 0 1.5rem 4rem rgba($color-black, 0.2);
-
+  // Note 50.1% fix on jagged edge of the gradient
+  background-image: linear-gradient(105deg,
+                                    rgba($color-white, 0.9) 0%,
+                                    rgba($color-white, 0.9) 50%,  
+                                    transparent 50.1%), 
+                                    url(../img/nat-10.jpg);
+  background-size: cover;
+  border-radius: $default-border-radius;
   height: 50rem;
+
+  @include boxShadow;
 
   &__form {
     width: 50%;

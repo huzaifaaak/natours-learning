@@ -1,14 +1,11 @@
 body {
-  color: $color-grey-dark;
+  color:$color-grey-dark;
   font-family: "Lato", Arial, sans-serif;
   font-weight: 400;
   /* font-size: 16px; */
   line-height: 1.7;
-  padding: 3rem;
-
-  /* Force inherit box-sizing to all elements */
-  box-sizing: border-box;
 }
+
 
 .heading-primary {
   color: $color-white;
@@ -16,7 +13,7 @@ body {
   /* To remove the upwards shaky movement of the heading primary main and sub */
   backface-visibility: hidden;
   margin-bottom: 6rem;
-
+  
   &--main {
     display: block;
     font-size: 6rem;
@@ -25,8 +22,13 @@ body {
     animation-name: moveInLeft;
     animation-duration: 1s;
     animation-timing-function: ease-out;
-  }
 
+    @include respond(phone){
+      letter-spacing: 1rem;
+      font-size: 5rem;
+    }
+  }
+  
   &--sub {
     display: block;
     font-size: 2rem;
@@ -34,38 +36,55 @@ body {
     letter-spacing: 1.75rem;
     /* Shorthand used here */
     animation: moveInRight 1s ease-out;
+
+    @include respond(phone){
+      letter-spacing: .5rem;
+    }
   }
 }
 
+// Secondary heading H2
 .heading-secondary {
   font-size: 3.5rem;
   text-transform: uppercase;
   font-weight: 700;
-  background-image: linear-gradient(
-    to right,
-    $color-primary-light,
-    $color-primary-dark
-  );
-  -webkit-background-clip: text;
-  color: transparent;
-  letter-spacing: 0.2rem;
-  transition: all 0.2s;
-  &:hover {
-    transform: skewY(2deg) skewY(15deg) scale(1.1);
-    box-shadow: 0.5rem 1rem 2rem rgba($color-black, 0.2);
-  }
   display: inline-block;
+  background-image: linear-gradient(to right, $color-primary, $color-primary-dark);
+
+  // New property background-clip
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: 2px;
+  transition: all .2s;
+
+  @include respond(tab-port){
+    font-size: 3rem;
+  }
+  @include respond(phone){
+    letter-spacing: 1px;
+    font-size: 2.5rem;
+  }
+
+  &:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: .5rem 1rem 2rem rgba($color-black, .1);
+  }
 }
+
+
+// Tertiary heading H3
 
 .heading-tertiary {
   font-size: $default-font-size;
-  font-weight: 700;
   text-transform: uppercase;
+  color: $color-grey-dark;
+  font-weight: 700;
 }
 
 .paragraph {
   font-size: $default-font-size;
-  &:not(:last-child) {
+  &:not(:last-child){
     margin-bottom: 3rem;
   }
 }
